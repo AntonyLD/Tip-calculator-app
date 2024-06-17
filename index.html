@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/script.js" defer></script>
+
+  <title>Frontend Mentor | Tip calculator app</title>
+
+</head>
+
+<body>
+  <header>
+    <h1>SPLI<br>TTER</h1>
+  </header>
+
+  <main>
+    <section id="sectionPayValue">
+      <p>Bill</p>
+      <p id="paraInputPayValue">$<input type="text" name="payValue" id="payValue" autocomplete="off"></p>
+    </section>
+    <h5>Select Tip %</h5>
+    <section id="selectTip">
+      <p>5%</p>
+      <p>10%</p>
+      <p>15%</p>
+      <p>25%</p>
+      <p>50%</p>
+      <p><input type="text" name="tipCustom" id="tipCustom" placeholder="Custom" autocomplete="off"></input></p>
+    </section>
+
+    <h5 id="numberOfPeopleTitle">Number of People</h5>
+    <section id="numberOfPeople">
+      
+      <p id="numberInputPeople"><img src="images/icon-person.svg" alt=""><input type="text" name="numberPeople" id="numberPeople" autocomplete="off"></p>
+    </section>
+    <section id="continerResultValue">
+      <div class="totalValue">
+        <div>
+          <p>Tip Amount</p>
+          <p>/ person</p>
+        </div>
+        <p>$4.27</p>
+      </div>
+      <div class="totalValue">
+        <div>
+          <p>Total</p>
+          <p>/ person</p>
+        </div>
+        <p>$32.79</p>
+        
+      </div>
+      <div>Reset</div>
+    </section>
+
+  </main>
+</body>
+
+</html>

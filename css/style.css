@@ -23,6 +23,7 @@
         background-color: white;
         border-radius: 20px;
         width: 375px;
+        height: 775px;
         margin: 0 auto;
         margin-bottom: 40px;
     }
@@ -165,25 +166,58 @@
 
     #numberInputPeople input:focus{
         outline: none;
+        
     }
+
+    
 
     #continerResultValue{
         background-color: hsl(183, 100%, 15%);
         border-radius: 10px;
         width: 83%;
+        height: 280px;
         margin: 40px auto 0px auto;
+
     }
 
-    .totalValue{
+    .divTotalValue{
         padding: 30px 20px 20px 20px;
         display: flex;
         justify-content: space-between;
     }
 
-    .totalValue div{
-        background-color: aquamarine;
-        gap: 30px;
-        
+    .tipDiscont p{
+        color: white;
+        font-weight: bolder;
+    }
+
+    .tipDiscont p:last-child{
+        color: hsla(180, 33%, 97%, 0.55);
+    }
+
+    .valueTot{
+        font-size: 35px;
+        font-weight: bolder;
+        color: hsl(170, 69%, 45%);
+    }
+
+    #buttonReset{
+        background-color: hsl(170, 69%, 45%);
+        color: hsl(183, 100%, 15%);
+        text-align: center;
+        width: 88%;
+        margin: 5px auto 0px auto;
+        padding: 8px 0px 8px 0px;
+        border-radius: 5px;
+        font-size: 23px;
+        font-weight: bolder;
+        cursor: pointer;
+
+    }
+
+    #selected{
+        background-color:hsl(170, 69%, 45%) !important; 
+        color: hsl(183, 100%, 15%) !important;
     }
 }
 

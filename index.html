@@ -32,7 +32,7 @@
     <section id="selectTip">
       <p>5%</p>
       <p>10%</p>
-      <p>15%</p>
+      <p id="selected">15%</p>
       <p>25%</p>
       <p>50%</p>
       <p><input type="text" name="tipCustom" id="tipCustom" placeholder="Custom" autocomplete="off"></input></p>
@@ -44,22 +44,22 @@
       <p id="numberInputPeople"><img src="images/icon-person.svg" alt=""><input type="text" name="numberPeople" id="numberPeople" autocomplete="off"></p>
     </section>
     <section id="continerResultValue">
-      <div class="totalValue">
-        <div>
+      <div class="divTotalValue">
+        <div class="tipDiscont">
           <p>Tip Amount</p>
           <p>/ person</p>
         </div>
-        <p>$4.27</p>
+        <p class="valueTot">$4.27</p>
       </div>
-      <div class="totalValue">
-        <div>
-          <p>Total</p>
+      <div class="divTotalValue">
+        <div class="tipDiscont">
+          <p >Total</p>
           <p>/ person</p>
         </div>
-        <p>$32.79</p>
+        <p class="valueTot">$32.79</p>
         
       </div>
-      <div>Reset</div>
+      <div id="buttonReset">RESET</div>
     </section>
 
   </main>

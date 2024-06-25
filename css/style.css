@@ -215,7 +215,7 @@
 
     }
 
-    #selected{
+    .selected{
         background-color:hsl(176, 69%, 45%) !important; 
         color: hsl(183, 100%, 15%) !important;
     }

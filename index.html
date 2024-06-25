@@ -24,38 +24,43 @@
   </header>
 
   <main>
+
     <section id="sectionPayValue">
       <p>Bill</p>
       <p id="paraInputPayValue">$<input type="text" name="payValue" id="payValue" autocomplete="off" placeholder="0" oninput="validarEntrada(this)"></p>
+
     </section>
     <h5>Select Tip %</h5>
+
     <section id="selectTip">
       <p>5%</p>
       <p>10%</p>
-      <p id="selected">15%</p>
+      <p>15%</p>
       <p>25%</p>
       <p>50%</p>
-      <p><input type="text" name="tipCustom" id="tipCustom" placeholder="Custom" autocomplete="off" oninput="validarEntrada(this)" ></input></p>
+      <p><input type="text" name="tipCustom" id="tipCustom" placeholder="Custom" autocomplete="off" oninput="validarEntrada(this)"></input></p>
     </section>
 
     <h5 id="numberOfPeopleTitle">Number of People</h5>
+
     <section id="numberOfPeople">
       <p id="numberInputPeople"><img src="images/icon-person.svg" alt=""><input type="text" name="numberPeople" id="numberPeople" autocomplete="off" placeholder="0" oninput="validarEntrada(this)"></p>
     </section>
+
     <section id="continerResultValue">
       <div class="divTotalValue">
         <div class="tipDiscont">
           <p>Tip Amount</p>
           <p>/ person</p>
         </div>
-        <p class="valueTot" id="totTip">$4.27</p>
+        <p class="valueTot" id="totTip">$0.00</p>
       </div>
       <div class="divTotalValue">
         <div class="tipDiscont">
           <p >Total</p>
           <p>/ person</p>
         </div>
-        <p class="valueTot" id="totValue">$32.79</p>
+        <p class="valueTot" id="totValue">$0.00</p>
         
       </div>
       <div id="buttonReset">RESET</div>

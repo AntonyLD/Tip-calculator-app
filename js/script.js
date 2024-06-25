@@ -13,56 +13,82 @@ function validarEntrada(payValue) {
     payValue.value = payValue.value.replace(/\D/g, '');
 }
 
+
 let valuePerson = 0
 let valuePersonTip = 0
-let valueOfTip = 0
+let indiceValue = 0
 
-function calcPay(payValue, index, numberPeople) {
+//calcula com as % fixas
+function formatTip(payValue, index, numberPeople) {
+    const indice = Number.parseInt(tipValue[index].innerHTML.replace("%", ""))
 
-    const indice = tipValue[index].id
-
-    console.log(indice)
-    
-    
+    indiceValue = indice
 }
 
-function calcCustomPay() {
-    const inputValue = Number.parseInt(payValue.value)
-    const valueOfTip = inputValue * (Number.parseInt(tipCustom.value) / 100)
+function calcTip() {
 
-    const result = valueOfTip + Number.parseInt(payValue.value)
+    if (isNaN(indiceValue)) {
 
-    valuePerson = result / Number.parseInt(numberPeople.value)
+        const inputValue = Number.parseInt(payValue.value)
+        const valueOfTip = inputValue * (Number.parseInt(tipCustom.value) / 100)
 
-    valuePersonTip = valueOfTip / Number.parseInt(numberPeople.value)
+        const result = valueOfTip + Number.parseInt(payValue.value)
+
+        valuePerson = result / Number.parseInt(numberPeople.value)
+
+        valuePersonTip = valueOfTip / Number.parseInt(numberPeople.value)
+
+    } else {
+        const inputValue = Number.parseInt(payValue.value)
+        const valueOfTip = (inputValue * indiceValue / 100)
+
+        valuePersonTip = valueOfTip / Number.parseInt(numberPeople.value)
+
+        const result = valueOfTip + Number.parseInt(payValue.value)
+
+        valuePerson = result / Number.parseInt(numberPeople.value)
+        showResult()
+    }
 }
+
+// Calcula com as porcentagem customizada
 
 function showResult() {
     totTip.innerHTML = `$${valuePersonTip.toFixed(2)}`
     totValue.innerHTML = `$${valuePerson.toFixed(2)}`
+
 }
 
-//Event
+//Eventos calculo fixo
+const tipValues = tipValue
 tipValue.forEach((tipValue, index) => {
     tipValue.addEventListener("click", () => {
-        calcPay(payValue, index, numberPeople)
-        showResult()
+
+        tipValues.forEach((tip) => {
+            tip.classList.remove('selected');
+        });
+
+        tipValue.classList.add("selected")
+
+        formatTip(payValue, index, numberPeople)
+        calcTip()
     });
 });
 
-
+//Eventos calculo customizado
 
 tipCustom.addEventListener("keyup", () => {
-    calcCustomPay()
+    calcTip()
     showResult()
 });
 
 numberPeople.addEventListener("keyup", () => {
-    calcCustomPay()
+    calcTip()
     showResult()
+
 });
 
 payValue.addEventListener("keyup", () => {
-    calcCustomPay()
+    calcTip()
     showResult()
 });

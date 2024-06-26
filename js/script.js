@@ -12,7 +12,6 @@ function validarBill(payValue) {
     editAmount = payValue.value.replace(/\D/g, '');
     editAmount = (parseInt(editAmount) / 100).toFixed(2);
     payValue.value = editAmount
-
 }
 
 function validarEntrada(payValue){
@@ -23,18 +22,28 @@ let valuePerson = 0
 let valuePersonTip = 0
 let indiceValue = 0
 
-//calcula com as % fixas
+//Transforma as opções de gorgeta em numeros e tira a % do lado delas
 function formatTip(payValue, index, numberPeople) {
     const indice = Number.parseInt(tipValue[index].innerHTML.replace("%", ""))
     indiceValue = indice
+
+    
 }
 
-function calcTip() {
 
+
+function calcTip() {
+    //Caso o input esteja vazio ou for um NaN ele é limpo
+    if(payValue.value <= 0 || isNaN(payValue.value)){
+        payValue.value = ""
+    }
+    
+    //transforma os inputs de string para numeros
     const inputValue = Number.parseFloat(payValue.value);
     const numPeople = Number.parseFloat(numberPeople.value);
 
     if (isNaN(inputValue) || isNaN(numPeople) || numPeople === 0) {
+        
         return; // Se inputValue ou numberPeople não forem números ou se numPeople for 0, não fazer nada
     }
 
@@ -60,7 +69,6 @@ function calcTip() {
 function showResult() {
     totTip.innerHTML = `$${valuePersonTip.toFixed(2)}`
     totValue.innerHTML = `$${valuePerson.toFixed(2)}`
-
 }
 
 //Eventos calculo fixo

@@ -447,12 +447,20 @@
         font-size: 23px;
         font-weight: bolder;
         cursor: pointer;
+        filter: brightness(0.5);
 
     }
 
     .selected{
         background-color:hsl(176, 69%, 45%) !important; 
         color: hsl(183, 100%, 15%) !important;
+    }
+
+    .resetOn{
+        filter: brightness(1) !important;
+    }
+    .resetOn:hover{
+        filter: brightness(1.5) !important;
     }
 }
 

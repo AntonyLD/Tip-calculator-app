@@ -21,6 +21,7 @@ function validarEntrada(payValue){
 let valuePerson = 0
 let valuePersonTip = 0
 let indiceValue = 0
+let indiceValue2 = indiceValue
 
 //Transforma as opções de gorgeta em numeros e tira a % do lado delas
 function formatTip(payValue, index, numberPeople) {
@@ -29,8 +30,6 @@ function formatTip(payValue, index, numberPeople) {
 
     
 }
-
-
 
 function calcTip() {
     //Caso o input esteja vazio ou for um NaN ele é limpo
@@ -84,18 +83,36 @@ tipValue.forEach((tipValue, index) => {
 
         formatTip(payValue, index, numberPeople)
         calcTip()
+        resetState()
     });
 });
+
+function resetState(){
+    if (indiceValue2 != 0 || payValue.value != 0 || tipCustom.value != 0 || numberPeople.value != 0){
+        buttonReset.classList.add("resetOn")
+        indiceValue2 = 0
+    } else {
+        buttonReset.classList.remove("resetOn")
+        
+    }
+
+    console.log(indiceValue2)
+}
+
+
 
 //Eventos calculo customizado
 tipCustom.addEventListener("keyup", () => {
     calcTip()
+    resetState()
 });
 numberPeople.addEventListener("keyup", () => {
     calcTip()
+    resetState()
 });
 payValue.addEventListener("keyup", () => {
     calcTip()
+    resetState()
 });
 
 //Limpa todos os inputos e os calculos selecionados
@@ -110,4 +127,5 @@ buttonReset.addEventListener("click",() =>{
 
     totTip.innerHTML = `$0.00`
     totValue.innerHTML = `$0.00`
+    resetState()
 })

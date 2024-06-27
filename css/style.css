@@ -179,7 +179,7 @@
         background-color: hsl(183, 100%, 15%);
         border-radius: 10px;
         width: 83%;
-        height: 280px;
+        min-height: 280px;
         margin: 40px auto 0px auto;
 
     }

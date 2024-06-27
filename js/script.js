@@ -95,11 +95,7 @@ function resetState(){
         buttonReset.classList.remove("resetOn")
         
     }
-
-    console.log(indiceValue2)
 }
-
-
 
 //Eventos calculo customizado
 tipCustom.addEventListener("keyup", () => {

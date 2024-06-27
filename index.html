@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -25,27 +25,25 @@
 
   <main>
 
-    <section id="sectionPayValue">
-      <p>Bill</p>
-      <p id="paraInputPayValue">$<input type="text" name="payValue" id="payValue" autocomplete="off" placeholder="0" oninput="validarBill(this)"></p>
-
-    </section>
-    <h5>Select Tip %</h5>
-
-    <section id="selectTip">
-      <p>5%</p>
-      <p>10%</p>
-      <p>15%</p>
-      <p>25%</p>
-      <p>50%</p>
-      <p><input type="text" name="tipCustom" id="tipCustom" placeholder="Custom" autocomplete="off" oninput="validarEntrada(this)"></input></p>
-    </section>
-
-    <h5 id="numberOfPeopleTitle">Number of People</h5>
-
-    <section id="numberOfPeople">
-      <p id="numberInputPeople"><img src="images/icon-person.svg" alt=""><input type="text" name="numberPeople" id="numberPeople" autocomplete="off" placeholder="0" oninput="validarEntrada(this)"></p>
-    </section>
+    <div id="mainPayValue">
+      <section id="sectionPayValue">
+        <p>Bill</p>
+        <p id="paraInputPayValue">$<input type="text" name="payValue" id="payValue" autocomplete="off" placeholder="0" oninput="validarBill(this)"></p>
+      </section>
+      <h5>Select Tip %</h5>
+      <section id="selectTip">
+        <p>5%</p>
+        <p>10%</p>
+        <p>15%</p>
+        <p>25%</p>
+        <p>50%</p>
+        <p><input type="text" name="tipCustom" id="tipCustom" placeholder="Custom" autocomplete="off" oninput="validarEntrada(this)"></input></p>
+      </section>
+      <h5 id="numberOfPeopleTitle">Number of People</h5>
+      <section id="numberOfPeople">
+        <p id="numberInputPeople"><img src="images/icon-person.svg" alt=""><input type="text" name="numberPeople" id="numberPeople" autocomplete="off" placeholder="0" oninput="validarEntrada(this)"></p>
+      </section>
+    </div>
 
     <section id="continerResultValue">
       <div class="divTotalValue">

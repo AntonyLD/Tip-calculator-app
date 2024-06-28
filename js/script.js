@@ -6,6 +6,7 @@ const numberPeople = document.querySelector("#numberPeople")
 const totTip = document.querySelector("#totTip")
 const totValue = document.querySelector("#totValue")
 const buttonReset = document.querySelector("#buttonReset")
+const inputFocusStyles = document.querySelectorAll(".styleFocus")
 
 //Formatação dos inputs
 function validarBill(payValue) {
@@ -18,17 +19,17 @@ function validarEntrada(payValue){
     payValue.value = payValue.value.replace(/\D/g, '');
 }
 
-let valuePerson = 0
-let valuePersonTip = 0
+let valuePerson = 0;
+let valuePersonTip = 0;
 let indiceValue = 0
-let indiceValue2 = indiceValue
+let tipSelectVerifi = 0
+
 
 //Transforma as opções de gorgeta em numeros e tira a % do lado delas
 function formatTip(payValue, index, numberPeople) {
     const indice = Number.parseInt(tipValue[index].innerHTML.replace("%", ""))
     indiceValue = indice
-
-    
+    tipSelectVerifi = indice
 }
 
 function calcTip() {
@@ -70,7 +71,7 @@ function showResult() {
     totValue.innerHTML = `$${valuePerson.toFixed(2)}`
 }
 
-//Eventos calculo fixo
+//Evento calculo fixo
 const tipValues = tipValue
 tipValue.forEach((tipValue, index) => {
     tipValue.addEventListener("click", () => {
@@ -84,16 +85,39 @@ tipValue.forEach((tipValue, index) => {
         formatTip(payValue, index, numberPeople)
         calcTip()
         resetState()
+        CantBeZero()
+        
     });
 });
 
+
+// Faz a verificação dos inputs e dos botões para poder ativar o reset
 function resetState(){
-    if (indiceValue2 != 0 || payValue.value != 0 || tipCustom.value != 0 || numberPeople.value != 0){
+    if (tipSelectVerifi != 0 || payValue.value != 0 || tipCustom.value != 0 || numberPeople.value != 0){
         buttonReset.classList.add("resetOn")
-        indiceValue2 = 0
+        tipSelectVerifi = 0
     } else {
         buttonReset.classList.remove("resetOn")
+    }
+   
+}
+
+let redBorder
+let CantZero
+
+//Verifica se o input de numero de pessoas estvazio e notifica
+function CantBeZero(){
+    if (indiceValue != 0 & payValue.value != 0 & isNaN(Number.parseFloat(numberPeople.value))){
         
+        redBorder = document.querySelector("#numberInputPeople")
+        redBorder.style.border = "2px solid red"
+        CantZero = document.querySelector("#hider")
+        CantZero.classList.add("cantBeZero")
+
+    } else {
+        redBorder.style.border = "none"
+        CantZero = document.querySelector("#hider")
+        CantZero.classList.remove("cantBeZero")
     }
 }
 
@@ -105,16 +129,36 @@ tipCustom.addEventListener("keyup", () => {
 numberPeople.addEventListener("keyup", () => {
     calcTip()
     resetState()
+    CantBeZero()
 });
 payValue.addEventListener("keyup", () => {
     calcTip()
     resetState()
+    CantBeZero()
 });
+
+
+//Limpa o style dos inputs clicados
+const inputFocusStyle = inputFocusStyles
+inputFocusStyles.forEach((focado,index) =>{
+    focado.addEventListener("click", () => {
+
+        inputFocusStyle.forEach((focus) => {
+            focus.classList.remove('focusInputStyle');
+        });
+
+        focado.classList.add("focusInputStyle")
+    });
+})
 
 //Limpa todos os inputos e os calculos selecionados
 buttonReset.addEventListener("click",() =>{
     tipValues.forEach((tip) => {
         tip.classList.remove('selected');
+    });
+
+    inputFocusStyle.forEach((focus) => {
+        focus.classList.remove('focusInputStyle');
     });
 
     tipCustom.value = ""
@@ -124,4 +168,5 @@ buttonReset.addEventListener("click",() =>{
     totTip.innerHTML = `$0.00`
     totValue.innerHTML = `$0.00`
     resetState()
+    CantBeZero()
 })

@@ -28,7 +28,7 @@
     <div id="mainPayValue">
       <section id="sectionPayValue">
         <p>Bill</p>
-        <p id="paraInputPayValue">$<input type="text" name="payValue" id="payValue" autocomplete="off" placeholder="0" oninput="validarBill(this)"></p>
+        <p class="styleFocus" id="paraInputPayValue">$<input type="text" name="payValue" id="payValue" autocomplete="off" placeholder="0" oninput="validarBill(this)"></p>
       </section>
       <h5>Select Tip %</h5>
       <section id="selectTip">
@@ -37,11 +37,14 @@
         <p>15%</p>
         <p>25%</p>
         <p>50%</p>
-        <p><input type="text" name="tipCustom" id="tipCustom" placeholder="Custom" autocomplete="off" oninput="validarEntrada(this)"></input></p>
+        <p><input type="text" name="tipCustom" id="tipCustom" class="styleFocus" placeholder="Custom" autocomplete="off" oninput="validarEntrada(this)"></input></p>
       </section>
-      <h5 id="numberOfPeopleTitle">Number of People</h5>
+      <div id="divCantBeZero">
+        <h5 id="numberOfPeopleTitle">Number of People</h5>
+        <h5  id="hider">Can't be zero</h5>
+      </div>
       <section id="numberOfPeople">
-        <p id="numberInputPeople"><img src="images/icon-person.svg" alt=""><input type="text" name="numberPeople" id="numberPeople" autocomplete="off" placeholder="0" oninput="validarEntrada(this)"></p>
+        <p id="numberInputPeople" class="styleFocus"><img src="images/icon-person.svg" alt=""><input type="text" name="numberPeople" id="numberPeople" autocomplete="off" placeholder="0" oninput="validarEntrada(this)"></p>
       </section>
     </div>
 

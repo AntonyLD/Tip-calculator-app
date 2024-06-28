@@ -137,6 +137,7 @@
     #numberOfPeople{
         width: 83%;
         margin: 0 auto;
+        
     }
 
     #numberInputPeople{
@@ -150,10 +151,12 @@
         font-weight: normal;
         height: 40px;
         margin-top: 8px;
+        
     }
 
     #numberInputPeople input{
         border: none;
+        
         background-color: transparent;
         width: 80%;
         font-size: 1.3rem;
@@ -253,7 +256,6 @@
 
     #mainPayValue{
         width: 600px;
-        
     }
 
     #sectionPayValue{
@@ -274,6 +276,8 @@
         font-weight: normal;
         height: 40px;
         margin-top: 8px;
+        border: 2px solid hsl(0, 0%, 100%)
+        
     }
 
     #sectionPayValue input{
@@ -332,10 +336,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 30px;
-        padding: 5px 0px 5px 0px;
+        height: 38px;
         background-color: hsl(189, 41%, 97%);
-        
     }
 
     #selectTip p input{
@@ -350,6 +352,7 @@
         font-size: 1.3rem;
     }
 
+
     #selectTip p input:focus{
         outline: none; 
         border: none;
@@ -358,11 +361,28 @@
     #selectTip p:last-child{
         background-color:hsl(189, 41%, 97%) !important;
     }
+    #divCantBeZero{
+        display: flex;
+        margin: 0 auto;
+        width: 83%;
+    }
+
+    .cantBeZero{
+        display: block;
+        color: rgba(236, 8, 8, 0.708)!important;
+        margin-top: 40px !important;
+        text-align: right !important;
+        margin-bottom: 0px !important;
+        font-weight: bolder !important;
+    }
 
     #numberOfPeopleTitle{
+        width: 100%;
         margin-top: 40px;
         margin-bottom: 0px;
         font-weight: bolder;
+        text-align: left;
+        
     }
 
     #numberOfPeople{
@@ -451,6 +471,7 @@
 
     }
 
+    /* classes interativas com js */
     .selected{
         background-color:hsl(176, 69%, 45%) !important; 
         color: hsl(183, 100%, 15%) !important;
@@ -462,5 +483,15 @@
     .resetOn:hover{
         filter: brightness(1.5) !important;
     }
+
+    .focusInputStyle {
+        border: 2px solid hsl(176, 69%, 45%) !important;
+        border-radius: 5px!important;
+    }
+    
+    #hider{
+        color: white;
+    }
+
 }
 

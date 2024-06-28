@@ -226,6 +226,10 @@
         background-color:hsl(176, 69%, 45%) !important; 
         color: hsl(183, 100%, 15%) !important;
     }
+
+    #hider{
+        display: none;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1900px ){
@@ -423,7 +427,7 @@
 
     #numberInputPeople input:focus{
         outline: none;
-        
+
     }
 
     #continerResultValue{

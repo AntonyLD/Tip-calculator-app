@@ -116,7 +116,7 @@ function CantBeZero(){
 
     } else {
         redBorder = document.querySelector("#numberInputPeople")
-        redBorder.style.border = "none"
+        redBorder.style.border = "2px solid white"
         CantZero = document.querySelector("#hider")
         CantZero.classList.remove("cantBeZero")
     }
